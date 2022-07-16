@@ -1,15 +1,17 @@
 import axios from "axios";
 import { useState, useRef } from "react";
 import styled from "styled-components";
-import useSWR from "swr";
-import Button from "./Button";
-import Container from "./Container";
-import Input from "./Input";
+import { useSWRConfig } from "swr";
+
+import Button from "../Button";
+import Container from "../Container";
+import Input from "../Input";
 
 const trim = (str: string) => str.trim();
 
 const AddToDo = () => {
-  const { mutate } = useSWR("/api/todos");
+  const { mutate } = useSWRConfig();
+
   const [isLoading, setIsLoading] = useState(false);
   const ref = useRef<any>(null);
 
@@ -31,7 +33,8 @@ const AddToDo = () => {
     if (data.status) {
       ref.current.value = "";
       setIsLoading(false);
-      mutate();
+      mutate("/api/todos");
+      mutate("/api/todos?isDone=false");
     }
   };
 

@@ -3,7 +3,7 @@ import DarkMode from "components/DarkMode";
 import List from "components/List";
 import { H1 } from "components/Typography";
 import type { NextPage } from "next";
-import AddToDo from "components/AddToDo";
+import AddToDo from "components/AddTodo/AddToDo";
 
 const Home: NextPage = () => {
   return (

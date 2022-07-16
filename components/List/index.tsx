@@ -1,24 +1,26 @@
 import styled from "styled-components";
 import { theme } from "styled-tools";
-import useSWR from "swr";
 import ListItem from "./ListItem";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Loading from "components/Icons/Loading";
 import Container from "components/Container";
+import useTodos from "swrHook/useTodos";
+import { useState } from "react";
+import Tabs from "./Tab";
 
 const List = () => {
-  const { data, error } = useSWR("/api/todos");
+  const [type, setType] = useState("all");
+  const { todos, isLoading } = useTodos(type);
   const [parent] = useAutoAnimate();
-  const { todos } = data || [];
 
   return (
     <Container position="relative">
-      {!error && !data && (
+      <Tabs type={type} setType={setType} />
+      {isLoading && (
         <LoadingSection>
           <Loading />
         </LoadingSection>
       )}
-
       <ListStyled ref={parent}>
         {todos?.map(({ _id, todo, createdAt, isDone }) => (
           <ListItem

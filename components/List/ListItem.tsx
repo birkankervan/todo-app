@@ -5,8 +5,8 @@ import Input from "components/Input";
 
 import dayjs from "dayjs";
 import { useState } from "react";
+import { useSWRConfig } from "swr";
 
-import useSWR from "swr";
 import {
   ActionWrapper,
   Checkbox,
@@ -27,12 +27,13 @@ type ListItemProps = {
 
 const ListItem = ({ id, date, text, isDone }: ListItemProps) => {
   const [isEditing, setIsEditing] = useState(false);
-  const { mutate } = useSWR("/api/todos");
+  const { mutate } = useSWRConfig();
   const fullTime = dayjs(date).format("DD.MM.YY HH:mm").split(" ");
 
   const removeTodo = async (id: string) => {
     await axios.delete(`/api/todos?id=${id}`);
-    mutate();
+    mutate("/api/todos");
+    mutate(`/api/todos?isDone=${isDone}`);
   };
 
   const toggleTodo = async (id: string) => {
@@ -40,7 +41,8 @@ const ListItem = ({ id, date, text, isDone }: ListItemProps) => {
       id,
       isDone: !isDone,
     });
-    mutate();
+    mutate("/api/todos");
+    mutate(`/api/todos?isDone=${isDone}`);
   };
 
   const handleEdit = async (e) => {
@@ -51,7 +53,8 @@ const ListItem = ({ id, date, text, isDone }: ListItemProps) => {
       });
       const { data } = res;
       if (data.status) {
-        mutate();
+        mutate("/api/todos");
+        mutate(`/api/todos?isDone=${isDone}`);
         setIsEditing(false);
       }
     }
@@ -96,7 +99,7 @@ const ListItem = ({ id, date, text, isDone }: ListItemProps) => {
               setIsEditing(true);
             }}
           >
-            <Edit />
+            🖍
           </div>
         )}
         {!isEditing && (
@@ -105,7 +108,7 @@ const ListItem = ({ id, date, text, isDone }: ListItemProps) => {
             title="Remove todo"
             onClick={() => removeTodo(id)}
           >
-            <Close />
+            🗑
           </div>
         )}
       </ActionWrapper>

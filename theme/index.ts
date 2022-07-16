@@ -6,7 +6,7 @@ export const theme = {
     text: "#000",
     bodyBg: "#fff",
     disabledText: "#444",
-    disabledBg: "#ddd",
+    disabledBg: "#efefef",
     white: "#fff",
     black: "#000",
     warning: "#f4b400",
@@ -72,7 +72,7 @@ export const darkTheme = {
     ...theme.colors,
     bodyBg: "#242424",
     text: "#eee",
-    disabledText: "#ddd",
+    disabledText: "#efefef",
     disabledBg: "#444",
   },
 };

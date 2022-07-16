@@ -59,7 +59,6 @@ export const LabelStyled = styled.label`
 export const ListItemStyled = styled.li`
   display: flex;
   cursor: pointer;
-  border-bottom: 1px solid ${theme("colors.disabledBg")};
 
   input[type="checkbox"] {
     position: absolute;
@@ -67,9 +66,11 @@ export const ListItemStyled = styled.li`
     left: -9999px;
     appearance: none;
     opacity: 0;
+
     &:checked + ${LabelStyled} {
       transition: all 0.3s;
       background-color: ${theme("colors.disabledBg")};
+
       ${Checkbox} {
         background-color: ${theme("colors.primary")};
         &:after {
@@ -184,6 +185,12 @@ export const ActionWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 28px;
+
+  .update,
+  .remove {
+    padding: 4px;
+  }
   @media (max-width: 768px) {
     flex-direction: column;
     .update,

@@ -27,10 +27,14 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const { todosCollection, ObjectId } = await collectionHandler();
+  let filter = {};
 
   if (req.method === "GET") {
+    const { isDone } = req.query;
+
+    filter = { ...(isDone && { isDone: isDone === "true" }) };
     const todos = await todosCollection
-      .find({})
+      .find(filter)
       .sort({ isDone: 1, createdAt: -1 })
       .toArray();
 
@@ -47,8 +51,9 @@ export default async function handler(
   }
 
   if (req.method === "POST") {
-    const data = { createdAt: new Date(), ...req.body };
+    const data = { createdAt: new Date(), ...req.body, isDone: false };
     const result = await todosCollection.insertOne(data);
+
     if (result.acknowledged) {
       response = {
         status: true,
