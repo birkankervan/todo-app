@@ -4,8 +4,8 @@ import useLocalStorageState from "use-local-storage-state";
 
 import FixedSection from "components/FixedSection";
 
-const Moon = dynamic(import("../Icons/Moon"));
-const Sun = dynamic(import("../Icons/Sun"));
+const Moon = dynamic(import("components/Icons/Moon"));
+const Sun = dynamic(import("components/Icons/Sun"));
 
 function DarkMode() {
   const [darkMode, setDarkMode] = useLocalStorageState("darkMode");

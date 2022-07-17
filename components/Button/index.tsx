@@ -4,7 +4,7 @@ import { HTMLAttributes, ReactNode } from "react";
 import styled from "styled-components";
 import { theme } from "styled-tools";
 
-const Loading = dynamic(import("../Icons/Loading"));
+const Loading = dynamic(import("components/Icons/Loading"));
 
 type ButtonPropsType = {
   children: ReactNode;

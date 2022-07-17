@@ -1,6 +1,4 @@
 import axios from "axios";
-import Close from "components/Icons/Close";
-import Edit from "components/Icons/Edit";
 import Input from "components/Input";
 
 import dayjs from "dayjs";

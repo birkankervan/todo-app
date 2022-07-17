@@ -44,6 +44,7 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://cdn.vodafone.com.tr/" />
+
           <link
             rel="preconnect"
             href="https://fonts.gstatic.com"

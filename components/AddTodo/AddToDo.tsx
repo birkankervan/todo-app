@@ -3,9 +3,9 @@ import { useState, useRef } from "react";
 import styled from "styled-components";
 import { useSWRConfig } from "swr";
 
-import Button from "../Button";
-import Container from "../Container";
-import Input from "../Input";
+import Button from "components/Button";
+import Container from "components/Container";
+import Input from "components/Input";
 
 const trim = (str: string) => str.trim();
 

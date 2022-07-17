@@ -1,24 +1,26 @@
-#  ToDo App
+# ToDo App
 
 ### Purpose
+
 Bu uygulama ile yapılacak işlerinizi kolaylıkla takip edebilirsiniz.
 ToDo'larınızı `✅ Done` ve `❌ Not Yet` sekmelerinden takip edebilirsiniz. Yaptığınız Görevi işaretleyip günlük rutinlerinize devam edebilirsiniz.
 MongoDB Bağlantısı sayesinde tüm cihazlarınızdan Chrome yardımı ile Görevlerinizi takip edebilirsiniz. Görevlerin yanında bulunan `🖍 (Kalem) ikonuna` tılayarak Görevi Düzenleyip Enter buttonu ile kayıt altına alabilirsiniz. `🗑 (Çöp Kutusu) ikonuna` tıklayarak da görevi silebilirsiniz.
 Sağ üstte bulunan `Gece Modu` sayesinde karanlık ortamlarda rahatsız etmeden kullanabilirsiniz.
 
-### ⚡️  [Demo](https://todo-4rs6k5gaw-birk4n.vercel.app/)
+### ⚡️ [Demo](https://todo-app-six-pearl.vercel.app/)
 
 ### Technical Explanation for App
-**MongoDB bilgileri env.local dosyasında tutulmuştur. Projenin çalışabilmesi için bu bilgilere ihtiyaç vardır.  `env.local` dosyası oluşturup aşağıdaki bilgileri kullanınız.**
+
+**MongoDB bilgileri env.local dosyasında tutulmuştur. Projenin çalışabilmesi için bu bilgilere ihtiyaç vardır. `env.local` dosyası oluşturup aşağıdaki bilgileri kullanınız.**
 
     DB_NAME=todo
-    
+
     MONGODB_URI=mongodb+srv://kervan09:iStShXptLYjywIId@cluster0.b2xvt.mongodb.net/?retryWrites=true&w=majority
-    
+
     COLLECTION_NAME=todos
 
-
 ### Used Libraries
+
 <p align="center">
   <a href="https://link-vote-theta.vercel.app/" target="_blank">
     <img src="https://skillicons.dev/icons?i=git,html,js,ts,react,nextjs,styledcomponents,mongodb" />
@@ -33,23 +35,13 @@ SSR tarafında [NextJS](https://nextjs.org/) kullanılmıştır. Fetch işlemler
 
 Javascript Framework olarak [React](https://tr.reactjs.org/) kullanılmıştır. Yazım dili olarak da [Typescript](https://www.typescriptlang.org/) kullanılmıştır.
 
-Fetch işlemleri için [SWR](https://swr.vercel.app/) ile birlikte [axios](https://github.com/axios/axios) kullanılmıştır. Bunun sebebi SWR nin çok tutarlı bir hook oluşudur. Bu hook sayesinde yapılan Fetch işleminde gelen response cache'e alınıp oradan componentlere servis edilebilmektedir. Bu sayede tekrar tekrar sorgu yapılamamktadır. Ayrıca yapılan sorgu sonucunu global bir state gibi tüm componentlere dağıtabilmekteyiz. 
+Fetch işlemleri için [SWR](https://swr.vercel.app/) ile birlikte [axios](https://github.com/axios/axios) kullanılmıştır. Bunun sebebi SWR nin çok tutarlı bir hook oluşudur. Bu hook sayesinde yapılan Fetch işleminde gelen response cache'e alınıp oradan componentlere servis edilebilmektedir. Bu sayede tekrar tekrar sorgu yapılamamktadır. Ayrıca yapılan sorgu sonucunu global bir state gibi tüm componentlere dağıtabilmekteyiz.
 
 CSS tarafında [Styled-Components](https://styled-components.com/) kullanılmıştır. Styled Component ile kompenetlermize kolayca css yazabilmekteyiz. CSS ler komponentin içinde durduğu için daha düzenli bir kod yapısı bulunmaktadır. ayrıca tema özelliği sayesinde gece modu veya kullanıcıya özel temalar oluşturup projelerimizde çeşitlilik sağlayabiliriz. Styled-Components sayesinde kullanılmayan CSS minimuma iner ve tarayıcı uyumsuzluğunu büyük ölçüde çözer. Kendisi build anında diğer tarayıcılara göre düzenlemeler yapar. SSR tarafındada rahatlıkla kullanılabilir.
 
 Gece Modu kullanımında global state olarak [local-storage](https://www.npmjs.com/package/use-local-storage-state) kullanılmıştır. Bir değişiklik olduğunda Styled-Components temada buna uygun değişiklik yapmaktadır.
 
 Animasyon olarak [@formkit/auto-animate](https://auto-animate.formkit.com/) kullanılmıştır. Silinen görevlere veya eklenen görevlere animasyon eklenmiştir. Çok basit bir kullanımı vardır. Parent Elemana ref ekleyerek tüm componentlerde kullanabilmekteyiz.
-
-
-
-
-
-
-
-
-
-
 
 ### Contact Me 👨🏻‍💻
 
@@ -67,6 +59,3 @@ Animasyon olarak [@formkit/auto-animate](https://auto-animate.formkit.com/) kull
     <img src="https://icons.iconarchive.com/icons/rafiqul-hassan/blogger/128/Email-3-icon.png" width=48 />
   </a>
 </p>
-
-
-
