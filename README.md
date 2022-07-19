@@ -11,14 +11,6 @@ Sağ üstte bulunan `Gece Modu` sayesinde karanlık ortamlarda rahatsız etmeden
 
 ### Technical Explanation for App
 
-**MongoDB bilgileri env.local dosyasında tutulmuştur. Projenin çalışabilmesi için bu bilgilere ihtiyaç vardır. `env.local` dosyası oluşturup aşağıdaki bilgileri kullanınız.**
-
-    DB_NAME=todo
-
-    MONGODB_URI=mongodb+srv://kervan09:iStShXptLYjywIId@cluster0.b2xvt.mongodb.net/?retryWrites=true&w=majority
-
-    COLLECTION_NAME=todos
-
 ### Used Libraries
 
 <p align="center">
