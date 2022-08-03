@@ -14,7 +14,7 @@ Sağ üstte bulunan `Gece Modu` sayesinde karanlık ortamlarda rahatsız etmeden
 ### Used Libraries
 
 <p align="center">
-  <a href="https://link-vote-theta.vercel.app/" target="_blank">
+  <a href="https://todo-app-six-pearl.vercel.app/" target="_blank">
     <img src="https://skillicons.dev/icons?i=git,html,js,ts,react,nextjs,styledcomponents,mongodb" />
   </a>
 </p>
